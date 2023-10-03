@@ -7,11 +7,11 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/result5"
         android:layout_width="227dp"
         android:layout_height="43dp"
         android:textAlignment="center"
-        android:text="TextView"
+        android:text="result5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.991"
@@ -20,11 +20,11 @@
         app:layout_constraintVertical_bias="0.398" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/result4"
         android:layout_width="227dp"
         android:layout_height="43dp"
         android:textAlignment="center"
-        android:text="TextView"
+        android:text="result4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.991"
@@ -33,11 +33,11 @@
         app:layout_constraintVertical_bias="0.337" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/result1"
         android:layout_width="227dp"
         android:layout_height="43dp"
         android:textAlignment="center"
-        android:text="TextView"
+        android:text="result1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.994"
@@ -46,11 +46,11 @@
         app:layout_constraintVertical_bias="0.155" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/result2"
         android:layout_width="227dp"
         android:layout_height="43dp"
         android:textAlignment="center"
-        android:text="TextView"
+        android:text="result2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.991"
@@ -59,11 +59,11 @@
         app:layout_constraintVertical_bias="0.215" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/result3"
         android:layout_width="227dp"
         android:layout_height="43dp"
         android:textAlignment="center"
-        android:text="TextView"
+        android:text="result3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.991"
@@ -72,11 +72,11 @@
         app:layout_constraintVertical_bias="0.276" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/try5"
         android:layout_width="187dp"
         android:layout_height="43dp"
         android:textAlignment="center"
-        android:text="TextView"
+        android:text="try5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.148"
@@ -85,11 +85,11 @@
         app:layout_constraintVertical_bias="0.398" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/try4"
         android:layout_width="187dp"
         android:layout_height="43dp"
         android:textAlignment="center"
-        android:text="TextView"
+        android:text="Try4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.148"
@@ -98,11 +98,11 @@
         app:layout_constraintVertical_bias="0.337" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/try3"
         android:layout_width="187dp"
         android:layout_height="43dp"
         android:textAlignment="center"
-        android:text="TextView"
+        android:text="Try3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.148"
@@ -111,7 +111,7 @@
         app:layout_constraintVertical_bias="0.276" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/N5"
         android:layout_width="40dp"
         android:layout_height="43dp"
         android:text="5"
@@ -125,7 +125,7 @@
         app:layout_constraintVertical_bias="0.398" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/N4"
         android:layout_width="40dp"
         android:layout_height="43dp"
         android:text="4"
@@ -139,7 +139,7 @@
         app:layout_constraintVertical_bias="0.337" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/N3"
         android:layout_width="40dp"
         android:layout_height="43dp"
         android:text="3"
@@ -153,7 +153,7 @@
         app:layout_constraintVertical_bias="0.276" />
 
     <Button
-        android:id="@+id/button15"
+        android:id="@+id/zero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#D3D3D3"
@@ -167,7 +167,7 @@
         app:layout_constraintVertical_bias="0.994" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/nine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#D3D3D3"
@@ -181,7 +181,7 @@
         app:layout_constraintVertical_bias="0.911" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/three"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#D3D3D3"
@@ -195,7 +195,7 @@
         app:layout_constraintVertical_bias="0.74" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#D3D3D3"
@@ -209,7 +209,7 @@
         app:layout_constraintVertical_bias="0.74" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#D3D3D3"
@@ -223,7 +223,7 @@
         app:layout_constraintVertical_bias="0.74" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/four"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#D3D3D3"
@@ -237,7 +237,7 @@
         app:layout_constraintVertical_bias="0.827" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/seven"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#D3D3D3"
@@ -251,7 +251,7 @@
         app:layout_constraintVertical_bias="0.912" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/six"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#D3D3D3"
@@ -265,7 +265,7 @@
         app:layout_constraintVertical_bias="0.827" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/eight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#D3D3D3"
@@ -279,7 +279,7 @@
         app:layout_constraintVertical_bias="0.911" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/five"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#D3D3D3"
@@ -293,7 +293,7 @@
         app:layout_constraintVertical_bias="0.824" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/del"
         android:layout_width="114dp"
         android:layout_height="61dp"
         android:backgroundTint="#D3D3D3"
@@ -307,7 +307,7 @@
         app:layout_constraintVertical_bias="0.909" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/enter"
         android:layout_width="114dp"
         android:layout_height="61dp"
         android:backgroundTint="#D3D3D3"
@@ -321,21 +321,21 @@
         app:layout_constraintVertical_bias="0.754" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/N1"
         android:layout_width="40dp"
         android:layout_height="43dp"
         android:text="1"
         android:textAlignment="center"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView20"
+        app:layout_constraintEnd_toEndOf="@+id/try1"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.154" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/N2"
         android:layout_width="40dp"
         android:layout_height="43dp"
         android:text="2"
@@ -349,7 +349,7 @@
         app:layout_constraintVertical_bias="0.215" />
 
     <Button
-        android:id="@+id/button16"
+        android:id="@+id/start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#D3D3D3"
@@ -363,11 +363,11 @@
         app:layout_constraintVertical_bias="0.04" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/vz"
         android:layout_width="457dp"
         android:layout_height="84dp"
         android:textAlignment="center"
-        android:text="TextView"
+        android:text="Enter the value of 4 digits"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -376,7 +376,7 @@
         app:layout_constraintVertical_bias="0.625" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/try1"
         android:layout_width="187dp"
         android:layout_height="43dp"
         android:text="TextView"
@@ -389,7 +389,7 @@
         app:layout_constraintVertical_bias="0.155" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/try2"
         android:layout_width="187dp"
         android:layout_height="43dp"
         android:textAlignment="center"
