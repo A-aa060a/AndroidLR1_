@@ -12,11 +12,9 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
+    private static final int CODE_LENGTH = 4;
     Boolean isNew=true;
-    EditText editText1;
-    EditText editText2;
-    EditText editText3;
-    EditText editText4;
+    private EditText editText1;
 
     private Button one;
     private Button two;
@@ -42,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView result3;
     private TextView result4;
     private TextView result5;
+    private String secretCode;
+    private int attempts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,9 +49,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         editText1 = findViewById(R.id.vz1);
-        editText2 = findViewById(R.id.vz2);
-        editText3 = findViewById(R.id.vz3);
-        editText4 = findViewById(R.id.vz4);
 
         findViewById(R.id.start).setOnClickListener(new View.OnClickListener(){
             @Override
@@ -61,7 +58,61 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        secretCode = generateSecretCode();
+        attempts = 0;
 
+        del.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String dataToCalculate = editText1.getText().toString();
+
+                dataToCalculate = dataToCalculate.substring(0,dataToCalculate.length()-1);
+
+                editText1.setText(dataToCalculate);
+
+            }
+        });
+
+        enter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String guess = editText1.getText().toString();
+                attempts++;
+
+                if(guess.length() != CODE_LENGTH){
+                    Toast.makeText(MainActivity.this, "doljna bit " + CODE_LENGTH + " digit", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                int bulls = 0;
+                int cows = 0;
+                for (int i = 0; i < CODE_LENGTH; i++){
+                    char guessDigit = guess.charAt(i);
+                    char secretDigit = secretCode.charAt(i);
+
+                    if(guessDigit == secretDigit){
+                        bulls++;
+                    } else if (secretCode.contains(String.valueOf(guessDigit))) {
+                        cows++;
+                    }
+                }
+
+                result1.setText("Bulls: " + bulls + "\nCows: " + cows);
+
+                if(bulls == CODE_LENGTH){
+                    Toast.makeText(MainActivity.this, "Congrats, you guessed '" + secretCode + "' for " + attempts + "guesses", Toast.LENGTH_LONG).show();
+                    enter.setEnabled(false);
+                }
+            }
+        });
+    }
+    private String generateSecretCode(){
+        StringBuilder codeBuilder = new StringBuilder();
+        for(int i = 0; i < CODE_LENGTH; i++){
+            int digit = (int) (Math.random() * 10);
+            codeBuilder.append(digit);
+        }
+        return codeBuilder.toString();
     }
 
     public void clickNumber(View view) {
@@ -91,87 +142,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         editText1.setText(number1);
-
-        if(isNew)
-            editText2.setText("");
-        isNew=false;
-        String number2 = editText2.getText().toString();
-        if (view.getId()==R.id.zero) { number2 = number2+"0";
-        }
-        else if (view.getId()==R.id.one) { number2 = number2+"1";
-        }
-        else if (view.getId()==R.id.two) { number2 = number2+"2";
-        }
-        else if (view.getId()==R.id.three) { number2 = number2+"3";
-        }
-        else if (view.getId()==R.id.four) { number2 = number2+"4";
-        }
-        else if (view.getId()==R.id.five) { number2 = number2+"5";
-        }
-        else if (view.getId()==R.id.six) { number2 = number2+"6";
-        }
-        else if (view.getId()==R.id.seven) { number2 = number2+"7";
-        }
-        else if (view.getId()==R.id.eight) { number2 = number2+"8";
-        }
-        else if (view.getId()==R.id.nine) { number2 = number2+"9";
-        }
-
-        editText2.setText(number2);
-
-        if(isNew)
-            editText3.setText("");
-        isNew=false;
-        String number3 = editText3.getText().toString();
-        if (view.getId()==R.id.zero) { number3 = number3+"0";
-        }
-        else if (view.getId()==R.id.one) { number3 = number3+"1";
-        }
-        else if (view.getId()==R.id.two) { number3 = number3+"2";
-        }
-        else if (view.getId()==R.id.three) { number3 = number3+"3";
-        }
-        else if (view.getId()==R.id.four) { number3 = number3+"4";
-        }
-        else if (view.getId()==R.id.five) { number3 = number3+"5";
-        }
-        else if (view.getId()==R.id.six) { number3 = number3+"6";
-        }
-        else if (view.getId()==R.id.seven) { number3 = number3+"7";
-        }
-        else if (view.getId()==R.id.eight) { number3 = number3+"8";
-        }
-        else if (view.getId()==R.id.nine) { number3 = number3+"9";
-        }
-
-        editText3.setText(number3);
-
-        if(isNew)
-            editText4.setText("");
-        isNew=false;
-        String number = editText4.getText().toString();
-        if (view.getId()==R.id.zero) { number = number+"0";
-        }
-        else if (view.getId()==R.id.one) { number = number+"1";
-        }
-        else if (view.getId()==R.id.two) { number = number+"2";
-        }
-        else if (view.getId()==R.id.three) { number = number+"3";
-        }
-        else if (view.getId()==R.id.four) { number = number+"4";
-        }
-        else if (view.getId()==R.id.five) { number = number+"5";
-        }
-        else if (view.getId()==R.id.six) { number = number+"6";
-        }
-        else if (view.getId()==R.id.seven) { number = number+"7";
-        }
-        else if (view.getId()==R.id.eight) { number = number+"8";
-        }
-        else if (view.getId()==R.id.nine) { number = number+"9";
-        }
-
-        editText4.setText(number);
 
     }
 
