@@ -15,14 +15,13 @@ public class MainActivity extends AppCompatActivity {
     private static final int CODE_LENGTH = 4;
     Boolean isNew=true;
     private EditText editText1;
+    private EditText editText2;
+    private EditText editText3;
+    private EditText editText4;
+    private EditText editText5;
     private Button start;
     private Button del;
     private Button enter;
-
-    private TextView try2;
-    private TextView try3;
-    private TextView try4;
-    private TextView try5;
     private TextView result1;
     private TextView result2;
     private TextView result3;
@@ -36,7 +35,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editText1 = findViewById(R.id.vz1);
+        editText1 = findViewById(R.id.try1);
+        editText2 = findViewById(R.id.try2);
+        editText3 = findViewById(R.id.try3);
+        editText4 = findViewById(R.id.try4);
+        editText5 = findViewById(R.id.try5);
+
         result1 = findViewById(R.id.result1);
         result2 = findViewById(R.id.result2);
         result3 = findViewById(R.id.result3);
