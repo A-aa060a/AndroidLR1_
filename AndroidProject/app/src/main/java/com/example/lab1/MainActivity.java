@@ -14,24 +14,11 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private static final int CODE_LENGTH = 4;
     Boolean isNew=true;
-    private EditText editText1;
-<<<<<<< HEAD
-
-    private Button one;
-    private Button two;
-    private Button three;
-    private Button four;
-    private Button five;
-    private Button six;
-    private Button seven;
-    private Button eight;
-   private Button zero;
-=======
-    private EditText editText2;
-    private EditText editText3;
-    private EditText editText4;
-    private EditText editText5;
->>>>>>> cc5a2a0830da8b4734ca72a949bfc1c01995bd55
+    private TextView textView1;
+    private TextView textView2;
+    private TextView textView3;
+    private TextView textView4;
+    private TextView textView5;
     private Button start;
     private Button del;
     private Button enter;
@@ -51,15 +38,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-<<<<<<< HEAD
-        editText1 = findViewById(R.id.vz);
-=======
-        editText1 = findViewById(R.id.try1);
-        editText2 = findViewById(R.id.try2);
-        editText3 = findViewById(R.id.try3);
-        editText4 = findViewById(R.id.try4);
-        editText5 = findViewById(R.id.try5);
->>>>>>> cc5a2a0830da8b4734ca72a949bfc1c01995bd55
+
+        textView1 = findViewById(R.id.try1);
+        textView2 = findViewById(R.id.try2);
+        textView3 = findViewById(R.id.try3);
+        textView4 = findViewById(R.id.try4);
+        textView5 = findViewById(R.id.try5);
+
 
         result1 = findViewById(R.id.result1);
         result2 = findViewById(R.id.result2);
@@ -84,11 +69,11 @@ public class MainActivity extends AppCompatActivity {
         del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String dataToCalculate = editText1.getText().toString();
+                String dataToCalculate = textView1.getText().toString();
 
                 dataToCalculate = dataToCalculate.substring(0,dataToCalculate.length()-1);
 
-                editText1.setText(dataToCalculate);
+                textView1.setText(dataToCalculate);
 
             }
         });
@@ -96,11 +81,11 @@ public class MainActivity extends AppCompatActivity {
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String guess = editText1.getText().toString();
-                String guess2 = editText2.getText().toString();
-                String guess3 = editText3.getText().toString();
-                String guess4 = editText4.getText().toString();
-                String guess5 = editText5.getText().toString();
+                String guess = textView1.getText().toString();
+                String guess2 = textView2.getText().toString();
+                String guess3 = textView3.getText().toString();
+                String guess4 = textView4.getText().toString();
+                String guess5 = textView5.getText().toString();
                 attempts++;
 
                 if(guess.length() != CODE_LENGTH){
@@ -141,18 +126,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickNumber(View view) {
         if(isNew)
-            editText1.setText("");
-        editText2.setText("");
-        editText3.setText("");
-        editText4.setText("");
-        editText5.setText("");
+            textView1.setText("");
+        textView2.setText("");
+        textView3.setText("");
+        textView4.setText("");
+        textView5.setText("");
 
         isNew=false;
-        String number1 = editText1.getText().toString();
-        String number2 = editText2.getText().toString();
-        String number3 = editText3.getText().toString();
-        String number4 = editText4.getText().toString();
-        String number5 = editText5.getText().toString();
+        String number1 = textView1.getText().toString();
+        String number2 = textView2.getText().toString();
+        String number3 = textView3.getText().toString();
+        String number4 = textView4.getText().toString();
+        String number5 = textView5.getText().toString();
         if (view.getId()==R.id.zero) { number1 = number1+"0";
         }
         else if (view.getId()==R.id.one) { number1 = number1+"1";
@@ -174,11 +159,11 @@ public class MainActivity extends AppCompatActivity {
         else if (view.getId()==R.id.nine) { number1 = number1+"9";
         }
 
-        editText1.setText(number1);
-        editText2.setText(number2);
-        editText3.setText(number3);
-        editText4.setText(number4);
-        editText5.setText(number5);
+        textView1.setText(number1);
+        textView2.setText(number2);
+        textView3.setText(number3);
+        textView4.setText(number4);
+        textView5.setText(number5);
 
     }
 

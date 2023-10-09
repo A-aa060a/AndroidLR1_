@@ -71,7 +71,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.276" />
 
-    <EditText
+    <TextView
         android:id="@+id/try5"
         android:layout_width="187dp"
         android:layout_height="43dp"
@@ -84,7 +84,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.398" />
 
-    <EditText
+    <TextView
         android:id="@+id/try4"
         android:layout_width="187dp"
         android:layout_height="43dp"
@@ -97,7 +97,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.337" />
 
-    <EditText
+    <TextView
         android:id="@+id/try3"
         android:layout_width="187dp"
         android:layout_height="43dp"
@@ -375,23 +375,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.04" />
 
-<<<<<<< HEAD
-    <EditText
-        android:id="@+id/vz"
-        android:layout_width="457dp"
-        android:layout_height="84dp"
-        android:text="Result"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.625" />
-=======
->>>>>>> cc5a2a0830da8b4734ca72a949bfc1c01995bd55
 
-    <EditText
+    <TextView
         android:id="@+id/try1"
         android:layout_width="187dp"
         android:layout_height="43dp"
@@ -404,7 +389,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.155" />
 
-    <EditText
+    <TextView
         android:id="@+id/try2"
         android:layout_width="187dp"
         android:layout_height="43dp"
