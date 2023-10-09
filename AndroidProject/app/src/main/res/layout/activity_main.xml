@@ -71,12 +71,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.276" />
 
-    <TextView
+    <EditText
         android:id="@+id/try5"
         android:layout_width="187dp"
         android:layout_height="43dp"
         android:textAlignment="center"
-        android:text="try5"
+        android:text="Attempt 5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.148"
@@ -84,12 +84,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.398" />
 
-    <TextView
+    <EditText
         android:id="@+id/try4"
         android:layout_width="187dp"
         android:layout_height="43dp"
         android:textAlignment="center"
-        android:text="Try4"
+        android:text="Attempt 4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.148"
@@ -97,12 +97,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.337" />
 
-    <TextView
+    <EditText
         android:id="@+id/try3"
         android:layout_width="187dp"
         android:layout_height="43dp"
         android:textAlignment="center"
-        android:text="Try3"
+        android:text="Attempt 3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.148"
@@ -375,6 +375,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.04" />
 
+<<<<<<< HEAD
     <EditText
         android:id="@+id/vz"
         android:layout_width="457dp"
@@ -387,26 +388,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.625" />
+=======
+>>>>>>> cc5a2a0830da8b4734ca72a949bfc1c01995bd55
 
-    <TextView
+    <EditText
         android:id="@+id/try1"
         android:layout_width="187dp"
         android:layout_height="43dp"
-        android:text="TextView"
+        android:text="Attempt 1"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.155" />
 
-    <TextView
+    <EditText
         android:id="@+id/try2"
         android:layout_width="187dp"
         android:layout_height="43dp"
         android:textAlignment="center"
-        android:text="TextView"
+        android:text="Attempt 2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.148"

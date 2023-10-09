@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int CODE_LENGTH = 4;
     Boolean isNew=true;
     private EditText editText1;
+<<<<<<< HEAD
 
     private Button one;
     private Button two;
@@ -25,15 +26,15 @@ public class MainActivity extends AppCompatActivity {
     private Button seven;
     private Button eight;
    private Button zero;
+=======
+    private EditText editText2;
+    private EditText editText3;
+    private EditText editText4;
+    private EditText editText5;
+>>>>>>> cc5a2a0830da8b4734ca72a949bfc1c01995bd55
     private Button start;
     private Button del;
     private Button enter;
-
-    private TextView try1;
-    private TextView try2;
-    private TextView try3;
-    private TextView try4;
-    private TextView try5;
     private TextView result1;
     private TextView result2;
     private TextView result3;
@@ -50,9 +51,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+<<<<<<< HEAD
         editText1 = findViewById(R.id.vz);
+=======
+        editText1 = findViewById(R.id.try1);
+        editText2 = findViewById(R.id.try2);
+        editText3 = findViewById(R.id.try3);
+        editText4 = findViewById(R.id.try4);
+        editText5 = findViewById(R.id.try5);
+>>>>>>> cc5a2a0830da8b4734ca72a949bfc1c01995bd55
 
-        findViewById(R.id.start).setOnClickListener(new View.OnClickListener(){
+        result1 = findViewById(R.id.result1);
+        result2 = findViewById(R.id.result2);
+        result3 = findViewById(R.id.result3);
+        result4 = findViewById(R.id.result4);
+        result5 = findViewById(R.id.result5);
+        del = findViewById(R.id.del);
+        start = findViewById(R.id.start);
+        enter = findViewById(R.id.enter);
+
+       start.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 Toast myToast = Toast.makeText(view.getContext(), "PLease start!", Toast.LENGTH_SHORT);
