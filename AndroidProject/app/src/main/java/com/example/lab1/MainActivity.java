@@ -97,6 +97,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String guess = editText1.getText().toString();
+                String guess2 = editText2.getText().toString();
+                String guess3 = editText3.getText().toString();
+                String guess4 = editText4.getText().toString();
+                String guess5 = editText5.getText().toString();
                 attempts++;
 
                 if(guess.length() != CODE_LENGTH){
@@ -138,8 +142,17 @@ public class MainActivity extends AppCompatActivity {
     public void clickNumber(View view) {
         if(isNew)
             editText1.setText("");
+        editText2.setText("");
+        editText3.setText("");
+        editText4.setText("");
+        editText5.setText("");
+
         isNew=false;
         String number1 = editText1.getText().toString();
+        String number2 = editText2.getText().toString();
+        String number3 = editText3.getText().toString();
+        String number4 = editText4.getText().toString();
+        String number5 = editText5.getText().toString();
         if (view.getId()==R.id.zero) { number1 = number1+"0";
         }
         else if (view.getId()==R.id.one) { number1 = number1+"1";
@@ -162,6 +175,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         editText1.setText(number1);
+        editText2.setText(number2);
+        editText3.setText(number3);
+        editText4.setText(number4);
+        editText5.setText(number5);
 
     }
 
