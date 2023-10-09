@@ -15,22 +15,10 @@ public class MainActivity extends AppCompatActivity {
     private static final int CODE_LENGTH = 4;
     Boolean isNew=true;
     private EditText editText1;
-
-    private Button one;
-    private Button two;
-    private Button three;
-    private Button four;
-    private Button five;
-    private Button six;
-    private Button seven;
-    private Button eight;
-    private Button nine;
-    private Button zero;
     private Button start;
     private Button del;
     private Button enter;
 
-    private TextView try1;
     private TextView try2;
     private TextView try3;
     private TextView try4;
@@ -49,8 +37,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         editText1 = findViewById(R.id.vz1);
+        result1 = findViewById(R.id.result1);
+        result2 = findViewById(R.id.result2);
+        result3 = findViewById(R.id.result3);
+        result4 = findViewById(R.id.result4);
+        result5 = findViewById(R.id.result5);
+        del = findViewById(R.id.del);
+        start = findViewById(R.id.start);
+        enter = findViewById(R.id.enter);
 
-        findViewById(R.id.start).setOnClickListener(new View.OnClickListener(){
+       start.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 Toast myToast = Toast.makeText(view.getContext(), "PLease start!", Toast.LENGTH_SHORT);
