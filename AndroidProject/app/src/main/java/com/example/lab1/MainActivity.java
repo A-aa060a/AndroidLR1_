@@ -24,8 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private Button six;
     private Button seven;
     private Button eight;
-    private Button nine;
-    private Button zero;
+   private Button zero;
     private Button start;
     private Button del;
     private Button enter;
@@ -43,12 +42,15 @@ public class MainActivity extends AppCompatActivity {
     private String secretCode;
     private int attempts;
 
+    public MainActivity() {
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editText1 = findViewById(R.id.vz1);
+        editText1 = findViewById(R.id.vz);
 
         findViewById(R.id.start).setOnClickListener(new View.OnClickListener(){
             @Override
