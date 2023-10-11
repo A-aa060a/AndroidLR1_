@@ -10,34 +10,29 @@ import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
     private static final int CODE_LENGTH = 4;
 
     private int numberOfRetry = 0;
-//    private int DelNumbers = 0;
     Boolean isNew = true;
-//    private int countOfDigit = 0;
     TextView[] textViewElements = new TextView[5];
     TextView[] textViewResults = new TextView[5];
-//    private TextView textView1;
-//    private TextView textView2;
-//    private TextView textView3;
-//    private TextView textView4;
-//    private TextView textView5;
     private Button start;
+    private boolean onGame = true;
     private Button del;
     private Button enter;
     private String resultOfDigits = "";
-//    private TextView result1;
-//    private TextView result2;
-//    private TextView result3;
-//    private TextView result4;
-//    private TextView result5;
     private String secretCode;
+    private TextView result;
     private int attempts;
 
     public MainActivity() {
+        secretCode = generateSecretCode();
     }
 
     @Override
@@ -58,9 +53,11 @@ public class MainActivity extends AppCompatActivity {
         textViewResults[2] = findViewById(R.id.result3);
         textViewResults[3] = findViewById(R.id.result4);
         textViewResults[4] = findViewById(R.id.result5);
+
         del = findViewById(R.id.del);
         start = findViewById(R.id.start);
         enter = findViewById(R.id.enter);
+        result = findViewById(R.id.result9);
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,30 +67,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });//починить (ну... или убрать)
 
-        secretCode = generateSecretCode();
         attempts = 0;
 
-//        del.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String dataToCalculate = textView1.getText().toString();
-//
-//                dataToCalculate = dataToCalculate.substring(0, dataToCalculate.length() - 1);
-//
-//                textView1.setText(dataToCalculate);
-//
-//            }
-//        }); //переделать
+       del.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String currentText = textViewElements[numberOfRetry].getText().toString();
+                currentText = currentText.substring(0, currentText.length() - 1);
+                resultOfDigits = resultOfDigits.substring(0, resultOfDigits.length() - 1);
+                textViewElements[numberOfRetry].setText(currentText);
+            }
+
+        });
 
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                System.out.println(secretCode);
                 String guess = textViewElements[numberOfRetry].getText().toString();
-
-                if (guess.length() != CODE_LENGTH) {
-                    Toast.makeText(MainActivity.this, "should be" + CODE_LENGTH + "digit", Toast.LENGTH_SHORT).show();
-                    return;
-                } //сделать только четырехзначное число без повторений!
+                result.setText("");
 
                 int bulls = 0;
                 int cows = 0;
@@ -106,14 +99,18 @@ public class MainActivity extends AppCompatActivity {
                     } else if (secretCode.contains(String.valueOf(guessDigit))) {
                         cows++;
                     }
-                }//сомнения... Работает 50/50
+                }
 
-                textViewResults[numberOfRetry].setText("Bulls: " + bulls + "\nCows: " + cows); //ура, работает
+                textViewResults[numberOfRetry].setText("Bulls: " + bulls + "\nCows: " + cows);
 
                 if (bulls == CODE_LENGTH) {
-                    Toast.makeText(MainActivity.this, "Congratulations, you guessed '" + secretCode + "for" + attempts + "guesses", Toast.LENGTH_LONG).show();
+                    onGame = false;
+                    result.setText("Congratulations, you guessed '" + Arrays.toString(secretCode.toCharArray()));
                     enter.setEnabled(false);
-                    //Не работает(((
+                }
+                else if (numberOfRetry == 4) {
+                    result.setText("You lose:(" + Arrays.toString(secretCode.toCharArray()));
+                    enter.setEnabled(false);
                 }
                 numberOfRetry++;
                 isNew = true;
@@ -123,13 +120,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String generateSecretCode() {
-        StringBuilder codeBuilder = new StringBuilder();
-        for (int i = 0; i < CODE_LENGTH; i++) {
-            int digit = (int) (Math.random() * 10);
-            codeBuilder.append(digit);
+        int counter = 1;
+        int tempDigit;
+        List<Integer> currentDigitsOfNumber = new ArrayList<>();
+        int digit = (int)(Math.random() * 10);
+        currentDigitsOfNumber.add(digit);
+        String randomDigit = "";
+        while (counter != 4) {
+            tempDigit = (int)(Math.random() * 10);
+            if (!currentDigitsOfNumber.contains(tempDigit))
+            {
+                currentDigitsOfNumber.add(tempDigit);
+                counter++;
+            }
         }
-        return codeBuilder.toString();
+        for (int i: currentDigitsOfNumber)
+            randomDigit += Integer.toString(i);
+        return randomDigit;
     }
+
 
     public String defineNumber(View view) {
         String number = "";
@@ -164,10 +173,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickNumber(View view) {
-        if (isNew)
-            setEmptyString(textViewElements[numberOfRetry], isNew);
-        resultOfDigits += defineNumber(view);
-        textViewElements[numberOfRetry].setText(resultOfDigits);
+        if (resultOfDigits.length() <= 3 && onGame)
+        {
+            if (isNew)
+                setEmptyString(textViewElements[numberOfRetry], isNew);
+            String tempDigit = defineNumber(view);
+            if (!resultOfDigits.contains(tempDigit))
+                resultOfDigits += defineNumber(view);
+            textViewElements[numberOfRetry].setText(resultOfDigits);
+        }
     }
-// удивительно, но работает
 }
