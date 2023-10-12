@@ -1,15 +1,11 @@
 package com.example.lab1;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
-
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.EditText;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,7 +13,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final int CODE_LENGTH = 4;
-
     private int numberOfRetry = 0;
     Boolean isNew = true;
     TextView[] textViewElements = new TextView[5];
@@ -40,13 +35,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         textViewElements[0] = findViewById(R.id.try1);
         textViewElements[1] = findViewById(R.id.try2);
         textViewElements[2] = findViewById(R.id.try3);
         textViewElements[3] = findViewById(R.id.try4);
         textViewElements[4] = findViewById(R.id.try5);
-
 
         textViewResults[0] = findViewById(R.id.result1);
         textViewResults[1] = findViewById(R.id.result2);
