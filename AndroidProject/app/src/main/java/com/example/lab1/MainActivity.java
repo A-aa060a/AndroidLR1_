@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         int counter = 1;
         int tempDigit;
         List<Integer> currentDigitsOfNumber = new ArrayList<>();
-        int digit = (int)(Math.random() * 10);
+        int digit = (int)(Math.random() * 9 + 1);
         currentDigitsOfNumber.add(digit);
         String randomDigit = "";
         while (counter != 4) {
