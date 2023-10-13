@@ -55,8 +55,10 @@ public class MainActivity extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast myToast = Toast.makeText(view.getContext(), "PLease start!", Toast.LENGTH_SHORT);
-                myToast.show();
+                if (numberOfRetry == 0) {
+                    Toast myToast = Toast.makeText(view.getContext(), "Введите четырёхзначное число без повторений", Toast.LENGTH_SHORT);
+                    myToast.show();
+                }
             }
         });//починить (ну... или убрать)
 
