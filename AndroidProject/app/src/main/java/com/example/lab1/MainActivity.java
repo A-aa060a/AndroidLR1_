@@ -1,6 +1,8 @@
 package com.example.lab1;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean onGame = true;
     private Button del;
     private Button enter;
+    private Button again;
     private String resultOfDigits = "";
     private String secretCode;
     private TextView result;
@@ -51,14 +54,23 @@ public class MainActivity extends AppCompatActivity {
         start = findViewById(R.id.start);
         enter = findViewById(R.id.enter);
         result = findViewById(R.id.result9);
+        again = findViewById(R.id.again);
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast myToast = Toast.makeText(view.getContext(), "PLease start!", Toast.LENGTH_SHORT);
+                Toast myToast = Toast.makeText(view.getContext(), "Please start your adventure!", Toast.LENGTH_SHORT);
                 myToast.show();
             }
         });//починить (ну... или убрать)
+        again.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                finish();
+                startActivity(intent);
+            }
+        });
 
         attempts = 0;
 
