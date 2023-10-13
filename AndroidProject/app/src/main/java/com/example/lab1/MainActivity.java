@@ -110,11 +110,11 @@ public class MainActivity extends AppCompatActivity {
 
                 if (bulls == CODE_LENGTH) {
                     onGame = false;
-                    result.setText("Congratulations, you guessed '" + Arrays.toString(secretCode.toCharArray()));
+                    result.setText("Congratulations, you guessed  " + Arrays.toString(secretCode.toCharArray()));
                     enter.setEnabled(false);
                 }
                 else if (numberOfRetry == 4) {
-                    result.setText("You lose:(" + Arrays.toString(secretCode.toCharArray()));
+                    result.setText("You lose:(       " + Arrays.toString(secretCode.toCharArray()));
                     enter.setEnabled(false);
                 }
                 numberOfRetry++;
