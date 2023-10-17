@@ -16,8 +16,6 @@
 .cxx
 local.properties
 gradlew.bat
-.gitignore
-app/.gitignore
 gradle/wrapper/gradle-wrapper.jar
 gradlew
 ../.idea/LR1.iml

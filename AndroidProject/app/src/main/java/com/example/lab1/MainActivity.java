@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         textViewElements[3] = findViewById(R.id.try4);
         textViewElements[4] = findViewById(R.id.try5);
 
+
         textViewResults[0] = findViewById(R.id.result1);
         textViewResults[1] = findViewById(R.id.result2);
         textViewResults[2] = findViewById(R.id.result3);
@@ -62,9 +64,12 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast myToast = Toast.makeText(view.getContext(), "Please start your adventure!", Toast.LENGTH_SHORT);
                 myToast.show();
-
+                if (onGame = true) {
+                    start.setEnabled(false);
+                }
             }
         });
+
         again.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
         attempts = 0;
 
-       del.setOnClickListener(new View.OnClickListener() {
+        del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -94,36 +99,38 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(secretCode);
                 String guess = textViewElements[numberOfRetry].getText().toString();
                 result.setText("");
-                if (guess.length() == 4){
+                if (guess.length() == 4) {
 
-                int bulls = 0;
-                int cows = 0;
-                for (int i = 0; i < CODE_LENGTH; i++) {
-                    char guessDigit = guess.charAt(i);
-                    char secretDigit = secretCode.charAt(i);
+                    int bulls = 0;
+                    int cows = 0;
+                    for (int i = 0; i < CODE_LENGTH; i++) {
+                        char guessDigit = guess.charAt(i);
+                        char secretDigit = secretCode.charAt(i);
 
-                    if (guessDigit == secretDigit) {
-                        bulls++;
-                    } else if (secretCode.contains(String.valueOf(guessDigit))) {
-                        cows++;
+                        if (guessDigit == secretDigit) {
+                            bulls++;
+                        } else if (secretCode.contains(String.valueOf(guessDigit))) {
+                            cows++;
+                        }
                     }
-                }
 
-                textViewResults[numberOfRetry].setText("Bulls: " + bulls + "\nCows: " + cows);
+                    textViewResults[numberOfRetry].setText("Bulls: " + bulls + "\nCows: " + cows);
 
-                if (bulls == CODE_LENGTH) {
-                    onGame = false;
-                    result.setText("Congratulations, you guessed  " + Arrays.toString(secretCode.toCharArray()));
-                    enter.setEnabled(false);
+                    if (bulls == CODE_LENGTH) {
+                        onGame = false;
+                        result.setText("Congratulations, you guessed  " + Arrays.toString(secretCode.toCharArray()));
+                        enter.setEnabled(false);
+                        del.setEnabled(false);
+                    } else if (numberOfRetry == 4) {
+                        result.setText("You lose:(       " + Arrays.toString(secretCode.toCharArray()));
+                        enter.setEnabled(false);
+                        del.setEnabled(false);
+                    }
+                    numberOfRetry++;
+                    isNew = true;
+                    resultOfDigits = "";
                 }
-                else if (numberOfRetry == 4) {
-                    result.setText("You lose:(       " + Arrays.toString(secretCode.toCharArray()));
-                    enter.setEnabled(false);
-                }
-                numberOfRetry++;
-                isNew = true;
-                resultOfDigits = "";
-            }}
+            }
         });
     }
 
@@ -131,18 +138,17 @@ public class MainActivity extends AppCompatActivity {
         int counter = 1;
         int tempDigit;
         List<Integer> currentDigitsOfNumber = new ArrayList<>();
-        int digit = (int)(Math.random() * 9 + 1);
+        int digit = (int) (Math.random() * 9 + 1);
         currentDigitsOfNumber.add(digit);
         String randomDigit = "";
         while (counter != 4) {
-            tempDigit = (int)(Math.random() * 10);
-            if (!currentDigitsOfNumber.contains(tempDigit))
-            {
+            tempDigit = (int) (Math.random() * 10);
+            if (!currentDigitsOfNumber.contains(tempDigit)) {
                 currentDigitsOfNumber.add(tempDigit);
                 counter++;
             }
         }
-        for (int i: currentDigitsOfNumber)
+        for (int i : currentDigitsOfNumber)
             randomDigit += Integer.toString(i);
         return randomDigit;
     }
@@ -172,7 +178,9 @@ public class MainActivity extends AppCompatActivity {
             number += "9";
         }
         return number;
+
     }
+
 
     public void setEmptyString(TextView textView, boolean isNew) {
         if (isNew)
@@ -181,8 +189,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickNumber(View view) {
-        if (resultOfDigits.length() <= 3 && onGame)
-        {
+        if (resultOfDigits.length() <= 3 && (onGame) && (numberOfRetry <5)) {
             if (isNew)
                 setEmptyString(textViewElements[numberOfRetry], isNew);
             String tempDigit = defineNumber(view);
