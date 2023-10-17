@@ -84,13 +84,12 @@ public class MainActivity extends AppCompatActivity {
         del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if ((resultOfDigits.length() >= 1) && (resultOfDigits.length() <= 4)){
                 String currentText = textViewElements[numberOfRetry].getText().toString();
                 currentText = currentText.substring(0, currentText.length() - 1);
                 resultOfDigits = resultOfDigits.substring(0, resultOfDigits.length() - 1);
                 textViewElements[numberOfRetry].setText(currentText);
-            }
-
+            }}
         });
 
         enter.setOnClickListener(new View.OnClickListener() {
